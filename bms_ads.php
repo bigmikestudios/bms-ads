@@ -143,7 +143,7 @@ if (is_admin()) {
 		require_once(ABSPATH . "wp-content/plugins/bms-smart-meta-box/SmartMetaBox.php");
 	}
 			
-	new SmartMetaBox('quote', array(
+	new SmartMetaBox('bms_ad', array(
 		'title'     => 'Ad URL',
 		'pages'     => array('ad'),
 		'context'   => 'normal',
@@ -151,9 +151,21 @@ if (is_admin()) {
 		'fields'    => array(
 			array(
 				'name' => 'URL',
-				'id' => 'url',
+				'id' => 'bmsad_url',
 				'type' => 'text',
 				'desc' => 'Be sure to include http:// . This field will be overridden by the URL field on images below.',
+			),
+			array(
+				'name' => 'Open in a new window',
+				'id' => 'bmsad_window',
+				'default' => 'false',
+				'type' => 'checkbox',
+			),
+			array(
+				'name' => 'Image Dimensions:',
+				'id' => 'bmsad_image_dimensions',
+				'content' => 'Images should be uploaded at 1170px x 165px',
+				'type' => 'display',
 			),
 		)
 	));
